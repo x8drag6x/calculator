@@ -114,18 +114,21 @@ class Buttoms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-                ElevatedButton(onPressed: onTab1, child: Text(label1)),
-                SizedBox(width: 10,),
-                ElevatedButton(onPressed: onTab2, child: Text(label2)),
-                SizedBox(width: 10,),
-                ElevatedButton(onPressed: onTab3, child: Text(label3)),
-                SizedBox(width: 10,),
-                ElevatedButton(onPressed: onTab4, child: Text(label4)),
-
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(right: 8,left: 8),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+                  Expanded(child: ElevatedButton(onPressed: onTab1, child: Text(label1))),
+                  SizedBox(width: 10,),
+                  Expanded(child: ElevatedButton(onPressed: onTab2, child: Text(label2))),
+                  SizedBox(width: 10,),
+                  Expanded(child: ElevatedButton(onPressed: onTab3, child: Text(label3))),
+                  SizedBox(width: 10,),
+                  Expanded(child: ElevatedButton(onPressed: onTab4, child: Text(label4))),
+      
+        ],
+      ),
     );
 
   }
