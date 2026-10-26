@@ -35,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
+  String display = '0';
   @override
   Widget build(BuildContext context) {
    
@@ -48,7 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: .center,
           children: [
-            Container(),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20),
+              alignment: Alignment.centerRight,
+              child: Text('display',style: TextStyle(fontSize: 36),),
+            ),
             Buttoms(label1: "AC", onTab1: () {
               
             }, label2: "Del", onTab2: () {
