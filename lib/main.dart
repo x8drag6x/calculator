@@ -43,39 +43,90 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Calculator"),
       ),
-      body: Center(
+      body: 
+        Container(
         child: Column(
           mainAxisAlignment: .center,
           children: [
             Container(),
-            Row(
-              children: [
-                
-              ],
-            ),
-            Row(
-              children: [
-                
-              ],
-            ),
-            Row(
-              children: [
-                
-              ],
-            ),
-            Row(
-              children: [
-                
-              ],
-            ),
-            Row(
-              children: [
-                
-              ],
-            ),
+            Buttoms(label1: "AC", onTab1: () {
+              
+            }, label2: "Del", onTab2: () {
+              
+            }, label3: "%", onTab3: () {
+              
+            }, label4: "/", onTab4: () {
+              
+            },),
+                        Buttoms(label1: "7", onTab1: () {
+              
+            }, label2: "8", onTab2: () {
+              
+            }, label3: "9", onTab3: () {
+              
+            }, label4: "*", onTab4: () {
+              
+            },),
+                        Buttoms(label1: "4", onTab1: () {
+              
+            }, label2: "5", onTab2: () {
+              
+            }, label3: "6", onTab3: () {
+              
+            }, label4: "-", onTab4: () {
+              
+            },),
+                        Buttoms(label1: "1", onTab1: () {
+              
+            }, label2: "2", onTab2: () {
+              
+            }, label3: "3", onTab3: () {
+              
+            }, label4: "+", onTab4: () {
+              
+            },),
+                   Buttoms(label1: "+-", onTab1: () {
+              
+            }, label2: "0", onTab2: () {
+              
+            }, label3: ".", onTab3: () {
+              
+            }, label4: "=", onTab4: () {
+              
+            },),
           ],
         ),
       ),
     );
+  }
+}
+
+class Buttoms extends StatelessWidget {
+  const Buttoms({super.key, required this.label1,  required this.onTab1,required this.label2,required this.onTab2,  required this.label3,required this.onTab3, required this.label4,  required this.onTab4,});
+  final String label1;
+  final VoidCallback onTab1;
+  final String label2;
+  final VoidCallback onTab2;
+  final String label3;
+  final VoidCallback onTab3;
+  final String label4;
+  final VoidCallback onTab4;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+                ElevatedButton(onPressed: onTab1, child: Text(label1)),
+                SizedBox(width: 10,),
+                ElevatedButton(onPressed: onTab2, child: Text(label2)),
+                SizedBox(width: 10,),
+                ElevatedButton(onPressed: onTab3, child: Text(label3)),
+                SizedBox(width: 10,),
+                ElevatedButton(onPressed: onTab4, child: Text(label4)),
+
+      ],
+    );
+
   }
 }
