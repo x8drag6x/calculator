@@ -38,7 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
   String display = '0';
   void addNumber(String number){
     setState(() {
-          display = number;
+      if (display == "0"){
+        display = number;
+      }else{
+        display += number;
+      }
     });
   }
   @override
@@ -78,20 +82,20 @@ class _MyHomePageState extends State<MyHomePage> {
               
             },),
                         Buttoms(label1: "4", onTab1: () {
-              
+              addNumber("4");
             }, label2: "5", onTab2: () {
-              
+              addNumber("5");
             }, label3: "6", onTab3: () {
-              
+              addNumber("6");
             }, label4: "-", onTab4: () {
               
             },),
                         Buttoms(label1: "1", onTab1: () {
-              
+              addNumber("1");
             }, label2: "2", onTab2: () {
-              
+              addNumber("2");
             }, label3: "3", onTab3: () {
-              
+              addNumber("3");
             }, label4: "+", onTab4: () {
               
             },),
