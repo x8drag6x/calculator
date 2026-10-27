@@ -108,7 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
               
             },),
                    Buttoms(label1: "+-", onTab1: () {
-              
+              setState(() {
+                if(display.startsWith("-")){
+                  display = display.substring(1);
+                }else if (display == "0"){
+                  display = "0";
+                }else{
+                  display = "-" + display;
+                }
+              });
             }, label2: "0", onTab2: () {
               addNumber("0");
             }, label3: ".", onTab3: () {
