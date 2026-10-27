@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label2: "Del", onTab2: () {
               setState(() {
                 if(display.length > 1){
-                  display.substring(0,display.length - 1);
+                  display = display.substring(0,display.length - 1);
                 }else{
                   display = "0";
                 }
@@ -112,7 +112,11 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label2: "0", onTab2: () {
               addNumber("0");
             }, label3: ".", onTab3: () {
-              
+              if(display.contains(".")){
+
+              }else{
+              addNumber(".");
+              }
             }, label4: "=", onTab4: () {
               
             },),
