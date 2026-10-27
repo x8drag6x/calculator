@@ -68,7 +68,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 display = "0";
               });
             }, label2: "Del", onTab2: () {
-              
+              setState(() {
+                if(display.length > 1){
+                  display.substring(0,display.length - 1);
+                }else{
+                  display = "0";
+                }
+              });
             }, label3: "%", onTab3: () {
               
             }, label4: "/", onTab4: () {
