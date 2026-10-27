@@ -64,7 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(display,style: TextStyle(fontSize: 36),),
             ),
             Buttoms(label1: "AC", onTab1: () {
-              
+              setState(() {
+                display = "0";
+              });
             }, label2: "Del", onTab2: () {
               
             }, label3: "%", onTab3: () {
@@ -102,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                    Buttoms(label1: "+-", onTab1: () {
               
             }, label2: "0", onTab2: () {
-              
+              addNumber("0");
             }, label3: ".", onTab3: () {
               
             }, label4: "=", onTab4: () {
