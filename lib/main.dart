@@ -83,7 +83,11 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label3: "%", onTab3: () {
               
             }, label4: "/", onTab4: () {
-              
+              setState(() {
+                display += "/";
+                expression += display;
+                display = "0";
+              });
             },),
                         Buttoms(label1: "7", onTab1: () {
               addNumber("7");
@@ -92,7 +96,11 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label3: "9", onTab3: () {
               addNumber("9");
             }, label4: "*", onTab4: () {
-              
+              setState(() {
+                display += "*";
+                expression += display;
+                display = "0";
+              });
             },),
                         Buttoms(label1: "4", onTab1: () {
               addNumber("4");
@@ -101,7 +109,11 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label3: "6", onTab3: () {
               addNumber("6");
             }, label4: "-", onTab4: () {
-              
+              setState(() {
+                display += "-";
+                expression += display;
+                display = "0";
+              });
             },),
                         Buttoms(label1: "1", onTab1: () {
               addNumber("1");
@@ -112,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label4: "+", onTab4: () {
               setState(() {
                 display += "+";
-                expression = display;
+                expression += display;
                 display = "0";
               });
             },),
@@ -135,7 +147,9 @@ class _MyHomePageState extends State<MyHomePage> {
               addNumber(".");
               }
             }, label4: "=", onTab4: () {
-              
+              setState(() {
+                print(expression);
+              });
             },),
           ],
         ),
