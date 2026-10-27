@@ -46,6 +46,9 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     });
   }
+  double calculate(double first , double sec , String operator){
+
+  }
   @override
   Widget build(BuildContext context) {
    
@@ -84,8 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
               
             }, label4: "/", onTab4: () {
               setState(() {
-                display += "/";
-                expression += display;
+                expression += display + "/";
                 display = "0";
               });
             },),
@@ -97,8 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
               addNumber("9");
             }, label4: "*", onTab4: () {
               setState(() {
-                display += "*";
-                expression += display;
+                expression += display + "*";
                 display = "0";
               });
             },),
@@ -110,8 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
               addNumber("6");
             }, label4: "-", onTab4: () {
               setState(() {
-                display += "-";
-                expression += display;
+                expression += display + "-";
                 display = "0";
               });
             },),
@@ -123,8 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
               addNumber("3");
             }, label4: "+", onTab4: () {
               setState(() {
-                display += "+";
-                expression += display;
+                expression += display + "+";
                 display = "0";
               });
             },),
@@ -148,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
               }
             }, label4: "=", onTab4: () {
               setState(() {
-                print(expression);
+                print(expression + display);
               });
             },),
           ],
