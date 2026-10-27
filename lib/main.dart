@@ -37,7 +37,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String display = '0';
   void addNumber(String number){
-    display = number;
+    setState(() {
+          display = number;
+    });
   }
   @override
   Widget build(BuildContext context) {
@@ -67,13 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
               
             },),
                         Buttoms(label1: "7", onTab1: () {
-              setState(() {
-                display = "7";
-              });
+              addNumber("7");
             }, label2: "8", onTab2: () {
-              
+              addNumber("8");
             }, label3: "9", onTab3: () {
-              
+              addNumber("9");
             }, label4: "*", onTab4: () {
               
             },),
