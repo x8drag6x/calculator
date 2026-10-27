@@ -46,8 +46,22 @@ class _MyHomePageState extends State<MyHomePage> {
       }
     });
   }
+  double result = 0;
   double calculate(double first , double sec , String operator){
-
+    switch (operator){
+      case "+":
+      result += first + sec;
+      return result;
+      case "-":
+      result += first - sec;
+      return result;
+      case "*":
+      result += first * sec;
+      return result;
+      case "/":
+      result += first / sec;
+      return result;
+    }
   }
   @override
   Widget build(BuildContext context) {
