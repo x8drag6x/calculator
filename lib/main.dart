@@ -50,17 +50,15 @@ class _MyHomePageState extends State<MyHomePage> {
   double calculate(double first , double sec , String operator){
     switch (operator){
       case "+":
-      result += first + sec;
-      return result;
+      return first + sec;
       case "-":
-      result += first - sec;
-      return result;
+      return first - sec;
       case "*":
-      result += first * sec;
-      return result;
+      return first * sec;
       case "/":
-      result += first / sec;
-      return result;
+      return first / sec;
+      default:
+      return 0;
     }
   }
   @override
@@ -84,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Buttoms(label1: "AC", onTab1: () {
               setState(() {
                 display = "0";
+                expression = "0";
               });
             }, label2: "Del", onTab2: () {
               setState(() {
@@ -95,6 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   }
                 }else{
                   display = "0";
+                  expression = "0";
                 }
               });
             }, label3: "%", onTab3: () {
@@ -161,7 +161,14 @@ class _MyHomePageState extends State<MyHomePage> {
               }
             }, label4: "=", onTab4: () {
               setState(() {
-                print(expression + display);
+                String fullExpression = expression + display;
+                int operatorIndex = fullExpression.indexOf("+");
+                String firstPart = fullExpression.substring(0,operatorIndex);
+                String secondPart = fullExpression.substring(operatorIndex+1);
+                double firstNumber = double.parse(firstPart);
+                double secondNumber = double.parse(secondPart);
+                double answer = calculate(firstNumber, secondNumber, "+");
+                print(answer);
               });
             },),
           ],
