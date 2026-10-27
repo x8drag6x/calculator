@@ -71,7 +71,9 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 if(display.length > 1){
                   display = display.substring(0,display.length - 1);
-                }else{
+                }else if (display == "-"){
+                  display = "0";
+                } else{
                   display = "0";
                 }
               });
