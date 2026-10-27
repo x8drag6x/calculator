@@ -36,6 +36,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String display = '0';
+  String expression = "";
   void addNumber(String number){
     setState(() {
       if (display == "0"){
@@ -71,9 +72,11 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 if(display.length > 1){
                   display = display.substring(0,display.length - 1);
-                }else if (display == "-"){
-                  display = "0";
-                } else{
+                  if(display == "-"){
+                    display = "0";
+                    
+                  }
+                }else{
                   display = "0";
                 }
               });
@@ -107,7 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label3: "3", onTab3: () {
               addNumber("3");
             }, label4: "+", onTab4: () {
-              
+              setState(() {
+                display += "+";
+                expression = display;
+                display = "0";
+              });
             },),
                    Buttoms(label1: "+-", onTab1: () {
               setState(() {
