@@ -172,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 String secondPart = fullExpression.substring(operatorIndex+1);
                 double firstNumber = double.parse(firstPart);
                 double secondNumber = double.parse(secondPart);
-                double answer = calculate(firstNumber, secondNumber, "+");
+                double answer = calculate(firstNumber, secondNumber, currentOperator);
                 display = answer.toString();
                 expression = "";
               });
