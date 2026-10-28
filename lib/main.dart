@@ -175,6 +175,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 }else{
                 String firstPart = fullExpression.substring(0,operatorIndex);
                 String secondPart = fullExpression.substring(operatorIndex+1);
+                if (firstPart.isEmpty ||secondPart.isEmpty){
+                  display = "ERROR";
+                  expression = "";
+                  currentOperator = "";
+                }else{
                 double firstNumber = double.parse(firstPart);
                 double secondNumber = double.parse(secondPart);
                 if (secondNumber == 0 && currentOperator == "/"){
@@ -185,7 +190,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 double answer = calculate(firstNumber, secondNumber, currentOperator);
                 display = answer.toString();
                 expression = "";
-            }}});
+            }}}});
             },),
           ],
         ),
