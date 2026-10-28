@@ -167,11 +167,14 @@ class _MyHomePageState extends State<MyHomePage> {
             }, label4: "=", onTab4: () {
               setState(() {
                 String fullExpression = expression + display;
-                int operatorIndex = fullExpression.indexOf("+");
+                int operatorIndex = fullExpression.indexOf(currentOperator);
                 String firstPart = fullExpression.substring(0,operatorIndex);
                 String secondPart = fullExpression.substring(operatorIndex+1);
                 double firstNumber = double.parse(firstPart);
                 double secondNumber = double.parse(secondPart);
+                if (secondNumber == 0 && currentOperator == "/"){
+                  display = "0";
+                }
                 double answer = calculate(firstNumber, secondNumber, currentOperator);
                 display = answer.toString();
                 expression = "";
