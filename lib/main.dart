@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Buttoms(label1: "AC", onTab1: () {
               setState(() {
                 display = "0";
-                expression = "0";
+                expression = "";
               });
             }, label2: "Del", onTab2: () {
               setState(() {
@@ -168,7 +168,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 double firstNumber = double.parse(firstPart);
                 double secondNumber = double.parse(secondPart);
                 double answer = calculate(firstNumber, secondNumber, "+");
-                print(answer);
+                display = answer.toString();
+                expression = "";
               });
             },),
           ],
