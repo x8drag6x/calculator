@@ -174,11 +174,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 double secondNumber = double.parse(secondPart);
                 if (secondNumber == 0 && currentOperator == "/"){
                   display = "0";
-                }
+                }else{
                 double answer = calculate(firstNumber, secondNumber, currentOperator);
                 display = answer.toString();
                 expression = "";
-              });
+            }});
             },),
           ],
         ),
