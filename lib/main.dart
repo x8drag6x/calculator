@@ -47,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
   double result = 0;
+  String currentOperator = "";
   double calculate(double first , double sec , String operator){
     switch (operator){
       case "+":
@@ -103,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 expression += display + "/";
                 display = "0";
+                currentOperator = "/";
               });
             },),
                         Buttoms(label1: "7", onTab1: () {
@@ -115,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 expression += display + "*";
                 display = "0";
+                currentOperator = "*";
               });
             },),
                         Buttoms(label1: "4", onTab1: () {
@@ -127,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 expression += display + "-";
                 display = "0";
+                currentOperator = "-";
               });
             },),
                         Buttoms(label1: "1", onTab1: () {
@@ -139,6 +143,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 expression += display + "+";
                 display = "0";
+                currentOperator = "+";
               });
             },),
                    Buttoms(label1: "+-", onTab1: () {
