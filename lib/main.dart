@@ -202,6 +202,10 @@ class _MyHomePageState extends State<MyHomePage> {
               onTab4: () {
                 setState(() {
                   String fullExpression = expression + display;
+                  if (currentOperator.isEmpty){
+                                        display = "ERROR";
+
+                  }else{
                   int operatorIndex = fullExpression.indexOf(currentOperator);
                   if (operatorIndex == -1) {
                     display = "ERROR";
@@ -237,7 +241,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       }
                     }
                   }
-                });
+                }});
               },
             ),
           ],
