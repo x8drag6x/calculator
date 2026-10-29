@@ -93,7 +93,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     }
                   } else {
                     display = "0";
-                    expression = "0";
                   }
                 });
               },
@@ -193,18 +192,28 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               label3: ".",
               onTab3: () {
-                if (display.contains(".")) {
+                setState(() {
+                  if (display.contains(".")) {
                 } else {
+                  if (display.contains(".")){
+
+                  }else if (display == "0"){
+                    display = "0.";
+                  }else{
+                    
                   addNumber(".");
+                  }
                 }
+                });
               },
               label4: "=",
               onTab4: () {
                 setState(() {
                   String fullExpression = expression + display;
                   if (currentOperator.isEmpty){
-                                        display = "ERROR";
-
+                      display = "ERROR";
+                      expression = "";
+                      currentOperator = "";
                   }else{
                   int operatorIndex = fullExpression.indexOf(currentOperator);
                   if (operatorIndex == -1) {
