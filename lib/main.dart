@@ -45,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  double result = 0;
   String currentOperator = "";
   double calculate(double first, double sec, String operator) {
     switch (operator) {
@@ -203,8 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     return;
                   }
                   else{
-                    
-                  addNumber(".");
+                    display += ".";
                   }
                 });
               },
