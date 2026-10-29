@@ -224,8 +224,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       expression = "";
                       currentOperator = "";
                     } else {
-                      double firstNumber = double.parse(firstPart);
-                      double secondNumber = double.parse(secondPart);
+                      double? firstNumber = double.tryParse(firstPart);
+                      double? secondNumber = double.tryParse(secondPart);
+                      if(firstNumber == null || secondNumber == null){
+                      display = "ERROR";
+                      expression = "";
+                      currentOperator = "";
+                      }else{
                       if (secondNumber == 0 && currentOperator == "/") {
                         display = "ERROR";
                         expression = "";
@@ -238,8 +243,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         );
                         display = answer.toString();
                         expression = "";
+                        currentOperator = "";
                       }
-                    }
+                    }}
                   }
                 }});
               },
