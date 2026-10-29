@@ -35,7 +35,9 @@ class _MyHomePageState extends State<MyHomePage> {
   String expression = "";
   void addNumber(String number) {
     setState(() {
-      if (display == "0") {
+      if (display == "ERROR"){
+        display = number;
+      }else if (display == "0") {
         display = number;
       } else {
         display += number;
@@ -194,16 +196,16 @@ class _MyHomePageState extends State<MyHomePage> {
               onTab3: () {
                 setState(() {
                   if (display.contains(".")) {
-                } else {
-                  if (display.contains(".")){
-
-                  }else if (display == "0"){
+                    return;
+                }else if (display == "0"){
                     display = "0.";
-                  }else{
+                  }else if (display == "ERROR"){
+                    return;
+                  }
+                  else{
                     
                   addNumber(".");
                   }
-                }
                 });
               },
               label4: "=",
